@@ -172,15 +172,14 @@
       position: absolute;
       right: 0;
       opacity: 0;
-
       &.picture {
         top: 25px;
         line-height: 1;
         opacity: 1;
       }
-      .@{iconfont-css-prefix} {
+      .anticon {
         padding-right: 6px;
-        color: @upload-actions-color;
+        color: rgba(0, 0, 0, 0.45);
       }
     }
 
@@ -196,13 +195,11 @@
       }
 
       .@{iconfont-css-prefix}-loading,
-      .@{upload-prefix-cls}-text-icon {
-        .@{iconfont-css-prefix} {
-          position: absolute;
-          top: @font-size-base / 2 - 2px;
-          color: @text-color-secondary;
-          font-size: @font-size-base;
-        }
+      .@{iconfont-css-prefix}-paper-clip {
+        position: absolute;
+        top: @font-size-base / 2 - 2px;
+        color: @text-color-secondary;
+        font-size: @font-size-base;
       }
     }
 
@@ -217,7 +214,6 @@
       cursor: pointer;
       opacity: 0;
       transition: all 0.3s;
-
       &:hover {
         color: @text-color;
       }
@@ -236,13 +232,13 @@
     }
 
     &-error,
-    &-error .@{upload-prefix-cls}-text-icon > .@{iconfont-css-prefix},
+    &-error .@{iconfont-css-prefix}-paper-clip,
     &-error &-name {
       color: @error-color;
     }
 
     &-error &-card-actions {
-      .@{iconfont-css-prefix} {
+      .anticon {
         color: @error-color;
       }
       opacity: 1;
@@ -292,13 +288,10 @@
       left: 8px;
       width: 48px;
       height: 48px;
+      font-size: 26px;
       line-height: 54px;
       text-align: center;
       opacity: 0.8;
-
-      .@{iconfont-css-prefix} {
-        font-size: 26px;
-      }
     }
 
     .@{upload-item}-icon {
@@ -307,10 +300,6 @@
       left: 50%;
       font-size: 26px;
       transform: translate(-50%, -50%);
-
-      .@{iconfont-css-prefix} {
-        font-size: 26px;
-      }
     }
 
     .@{upload-item}-image {
@@ -414,7 +403,7 @@
       opacity: 0;
       transition: all 0.3s;
 
-      .@{iconfont-css-prefix}-eye,
+      .@{iconfont-css-prefix}-eye-o,
       .@{iconfont-css-prefix}-download,
       .@{iconfont-css-prefix}-delete {
         z-index: 10;
@@ -452,7 +441,7 @@
       text-align: center;
     }
 
-    .@{upload-item}-file + .@{upload-item}-name {
+    .anticon-picture + .@{upload-item}-name {
       position: absolute;
       bottom: 10px;
       display: block;
@@ -466,10 +455,15 @@
       .@{upload-item}-info {
         height: auto;
         &::before,
-        .@{iconfont-css-prefix}-eye,
+        .@{iconfont-css-prefix}-eye-o,
         .@{iconfont-css-prefix}-delete {
           display: none;
         }
+      }
+
+      &-text {
+        margin-top: 18px;
+        color: @text-color-secondary;
       }
     }
 
@@ -546,5 +540,3 @@
     opacity: 0;
   }
 }
-
-@import './rtl';
